@@ -13,6 +13,9 @@ import {
   ResizableHandle,
 } from "@/components/ui/resizable";
 
+import LivePreview from "@/components/docs/LivePreview";
+import { demoRegistry } from "@/data/demo-registry";
+
 import {
   componentRegistry,
   getComponentBySlug,
@@ -122,8 +125,12 @@ export default function Playground() {
 
                 <div className="h-full flex flex-col">
 
-                  <div className="flex-1 p-4 bg-black/50">
-                    <LivePreviewPane />
+                  <div className="flex-1 p-4 bg-black/50 overflow-hidden relative">
+                    {demoRegistry[selectedSlug] ? (
+                      <LivePreview slug={selectedSlug} />
+                    ) : (
+                      <LivePreviewPane />
+                    )}
                   </div>
 
                   {/* Props */}

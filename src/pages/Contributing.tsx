@@ -36,7 +36,7 @@ export default function Contributing() {
 
           <div>
             <h2 className="text-xl font-bold text-foreground mb-4">Quick Start</h2>
-            <CodeBlock code={`# Fork and clone the repo\ngit clone https://github.com/YOUR_USERNAME/my3dui.git\ncd my3dui\n\n# Install dependencies\npnpm install\n\n# Start development\npnpm dev\n\n# Run tests\npnpm test\n\n# Submit your changes\ngit checkout -b feature/my-feature\ngit commit -m "feat: add my feature"\ngit push origin feature/my-feature`} language="bash" title="Development Setup" />
+            <CodeBlock code={`# Fork and clone the repo\ngit clone https://github.com/Sree0405/MY3DUI.git\ncd my3dui\n\n# Install dependencies\npnpm install\n\n# Start development\npnpm dev\n\n# Run tests\npnpm test\n\n# Submit your changes\ngit checkout -b feature/my-feature\ngit commit -m "feat: add my feature"\ngit push origin feature/my-feature`} language="bash" title="Development Setup" />
           </div>
 
           <div>

@@ -65,11 +65,14 @@ export default function SearchDialog() {
                   className="w-full flex items-start gap-3 p-3 rounded-lg hover:bg-primary/10 text-left transition-colors"
                 >
                   <Icon className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <div className="flex pl-3 flex-row justify-between w-full">
+
                   <div className="min-w-0">
                     <div className="text-sm font-medium text-foreground truncate">{result.title}</div>
                     <div className="text-xs text-muted-foreground truncate">{result.description}</div>
                   </div>
                   <span className="text-[10px] font-mono text-muted-foreground/50 uppercase shrink-0 mt-0.5">{result.type}</span>
+                  </div>
                 </button>
               );
             })}

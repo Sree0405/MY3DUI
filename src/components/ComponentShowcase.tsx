@@ -1,205 +1,261 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, RoundedBox, Text, MeshDistortMaterial, Environment } from "@react-three/drei";
 import { motion } from "framer-motion";
-import { Suspense, useRef, useState } from "react";
-import * as THREE from "three";
 
-function Button3DDemo() {
-  const [hovered, setHovered] = useState(false);
-  const ref = useRef<THREE.Mesh>(null);
+import { Toggle3D } from "@/components/ui/toggle3d";
+import { Button3D } from "@/components/ui/button3d";
+import { Card3D } from "@/components/ui/card3d";
+import { Accordion3D } from "@/components/ui/accordion3d";
+import { Badge3D } from "@/components/ui/badge3d";
+import { Input3D } from "@/components/ui/input3d";
+import { Slider3D } from "@/components/ui/slider3d";
+import { Progress3D } from "@/components/ui/progress3d";
+import { Tabs3D } from "@/components/ui/tabs3d";
 
-  useFrame(() => {
-    if (ref.current) {
-      ref.current.scale.lerp(
-        new THREE.Vector3(hovered ? 1.1 : 1, hovered ? 1.1 : 1, hovered ? 1.1 : 1),
-        0.1
-      );
-    }
-  });
-
-  return (
-    <Float speed={2} floatIntensity={0.3}>
-      <group>
-        <RoundedBox
-          ref={ref}
-          args={[2.5, 0.8, 0.3]}
-          radius={0.15}
-          smoothness={4}
-          onPointerOver={() => setHovered(true)}
-          onPointerOut={() => setHovered(false)}
-        >
-          <meshStandardMaterial
-            color={hovered ? "#22d3ee" : "#0e7490"}
-            roughness={0.2}
-            metalness={0.8}
-            emissive={hovered ? "#22d3ee" : "#000"}
-            emissiveIntensity={hovered ? 0.3 : 0}
-          />
-        </RoundedBox>
-        <Text
-          position={[0, 0, 0.2]}
-          fontSize={0.22}
-          color="#fff"
-          anchorX="center"
-          anchorY="middle"
-          font="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqUtEw.woff"
-        >
-          Click Me
-        </Text>
-      </group>
-    </Float>
-  );
-}
-
-function Card3DDemo() {
-  const ref = useRef<THREE.Group>(null);
-
-  useFrame((state) => {
-    if (ref.current) {
-      ref.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.15;
-    }
-  });
-
-  return (
-    <Float speed={1.5} floatIntensity={0.3}>
-      <group ref={ref}>
-        <RoundedBox args={[2.8, 2, 0.15]} radius={0.12} smoothness={4}>
-          <meshStandardMaterial
-            color="#1a1a2e"
-            roughness={0.3}
-            metalness={0.5}
-            transparent
-            opacity={0.9}
-          />
-        </RoundedBox>
-        <mesh position={[0, 0.4, 0.1]}>
-          <sphereGeometry args={[0.35, 32, 32]} />
-          <MeshDistortMaterial color="#22d3ee" distort={0.4} speed={3} roughness={0.2} />
-        </mesh>
-        <Text
-          position={[0, -0.25, 0.1]}
-          fontSize={0.18}
-          color="#e2e8f0"
-          anchorX="center"
-          font="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqUtEw.woff"
-        >
-          Card3D
-        </Text>
-        <Text
-          position={[0, -0.55, 0.1]}
-          fontSize={0.11}
-          color="#64748b"
-          anchorX="center"
-          font="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqUtEw.woff"
-        >
-          Interactive • Animated • Accessible
-        </Text>
-      </group>
-    </Float>
-  );
-}
-
-function ParticleField() {
-  const ref = useRef<THREE.Points>(null);
-  const count = 200;
-  const positions = new Float32Array(count * 3);
-  for (let i = 0; i < count; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 8;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 5;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 4;
-  }
-
-  useFrame((state) => {
-    if (ref.current) {
-      ref.current.rotation.y = state.clock.elapsedTime * 0.03;
-    }
-  });
-
-  return (
-    <points ref={ref}>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={count} array={positions} itemSize={3} />
-      </bufferGeometry>
-      <pointsMaterial size={0.03} color="#a78bfa" transparent opacity={0.4} sizeAttenuation />
-    </points>
-  );
-}
-
+/* Component Data */
 const components = [
   {
+    id: "button",
     name: "Button3D",
-    description: "Interactive 3D buttons with hover states, focus rings, and haptic feedback support.",
-    code: `<Button3D\n  variant="primary"\n  size="lg"\n  onClick={handleClick}\n>\n  Click Me\n</Button3D>`,
-    scene: Button3DDemo,
+    description: "Interactive buttons with press depth and glow feedback.",
+    code: `<Button3D variant="primary">Click</Button3D>`,
+    render: () => (
+      <div className="flex gap-4">
+        <Button3D>Primary</Button3D>
+        <Button3D variant="secondary">Secondary</Button3D>
+      </div>
+    ),
   },
+
   {
+    id: "toggle",
+    name: "Toggle3D",
+    description: "Smooth animated toggle with glass and neon variants.",
+    code: `<Toggle3D defaultChecked />`,
+    render: () => (
+      <div className="flex gap-6">
+        <Toggle3D defaultChecked />
+        <Toggle3D variant="glass" />
+      </div>
+    ),
+  },
+
+  {
+    id: "card",
     name: "Card3D",
-    description: "Floating 3D cards with depth, shadows, and tilt-on-hover interactions.",
-    code: `<Card3D\n  depth={0.15}\n  tilt={true}\n  shadow="lg"\n>\n  <Card3D.Header />\n  <Card3D.Body />\n</Card3D>`,
-    scene: Card3DDemo,
+    description: "Perspective cards with hover tilt and depth.",
+    code: `<Card3D>Content</Card3D>`,
+    render: () => (
+      <Card3D className="w-48 h-28 flex items-center justify-center">
+        <span className="font-semibold">Hover Me</span>
+      </Card3D>
+    ),
   },
+
   {
-    name: "Particles",
-    description: "GPU-instanced particle systems with physics simulation and custom emitters.",
-    code: `<Particles\n  count={1000}\n  size={0.03}\n  color="#a78bfa"\n  physics="attract"\n  emitter="sphere"\n/>`,
-    scene: ParticleField,
+    id: "accordion",
+    name: "Accordion3D",
+    description: "Expandable sections with smooth transitions.",
+    code: `<Accordion3D items={[...]} />`,
+    render: () => (
+      <div className="w-full max-w-xs">
+        <Accordion3D
+          items={[
+            { title: "First", content: "Content One" },
+            { title: "Second", content: "Content Two" },
+          ]}
+        />
+      </div>
+    ),
+  },
+
+  {
+    id: "badge",
+    name: "Badge3D",
+    description: "Status indicators with depth and glow.",
+    code: `<Badge3D>Online</Badge3D>`,
+    render: () => (
+      <div className="flex gap-3">
+        <Badge3D>Active</Badge3D>
+        <Badge3D variant="success">Online</Badge3D>
+        <Badge3D variant="danger">Offline</Badge3D>
+      </div>
+    ),
+  },
+
+  {
+    id: "input",
+    name: "Input3D",
+    description: "Text inputs with focus glow and soft shadows.",
+    code: `<Input3D placeholder="Email" />`,
+    render: () => (
+      <div className="w-56">
+        <Input3D placeholder="Enter email" />
+      </div>
+    ),
+  },
+
+  {
+    id: "slider",
+    name: "Slider3D",
+    description: "Draggable slider with animated thumb.",
+    code: `<Slider3D value={40} />`,
+    render: () => (
+      <div className="w-52">
+        <Slider3D defaultValue={40} />
+      </div>
+    ),
+  },
+
+  {
+    id: "progress",
+    name: "Progress3D",
+    description: "Progress indicators with smooth fill motion.",
+    code: `<Progress3D value={70} />`,
+    render: () => (
+      <div className="w-52">
+        <Progress3D value={70} />
+      </div>
+    ),
+  },
+
+  {
+    id: "tabs",
+    name: "Tabs3D",
+    description: "Animated tab navigation with depth effects.",
+    code: `<Tabs3D items={[...]} />`,
+    render: () => (
+<Tabs3D
+  tabs={[
+    {
+      label: "Dashboard",
+      value: "dashboard",
+      content: (
+        <div className="space-y-2">
+          <h4 className="font-semibold">Overview</h4>
+          <p className="text-sm text-muted-foreground">
+            Track usage, performance, and activity.
+          </p>
+        </div>
+      ),
+    },
+
+    {
+      label: "Profile",
+      value: "profile",
+      content: (
+        <div className="space-y-2">
+          <h4 className="font-semibold">User Settings</h4>
+          <p className="text-sm text-muted-foreground">
+            Manage your personal information and preferences.
+          </p>
+        </div>
+      ),
+    },
+
+    {
+      label: "Billing",
+      value: "billing",
+      content: (
+        <div className="space-y-2">
+          <h4 className="font-semibold">Subscription</h4>
+          <p className="text-sm text-muted-foreground">
+            View invoices and manage your plan.
+          </p>
+        </div>
+      ),
+    },
+
+    {
+      label: "Support",
+      value: "support",
+      content: (
+        <div className="space-y-2">
+          <h4 className="font-semibold">Help Center</h4>
+          <p className="text-sm text-muted-foreground">
+            Contact support or browse FAQs.
+          </p>
+        </div>
+      ),
+    },
+  ]}
+/>
+
+    ),
   },
 ];
 
 export default function ComponentShowcase() {
   return (
-    <section id="components" className="py-32 relative">
+    <section
+      id="components"
+      className="py-28 relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+    >
       <div className="container mx-auto px-6">
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            50+ <span className="text-gradient">3D Components</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">
+            Production Ready{" "}
+            <span className="text-blue-500">3D UI</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            From buttons to data visualizations — every component is interactive, animated, and production-ready.
+
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            Beautiful, accessible components with depth — no WebGL, no Canvas,
+            just modern frontend engineering.
           </p>
         </motion.div>
 
-        <div className="space-y-20">
+        {/* Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+
           {components.map((comp, i) => (
+
             <motion.div
-              key={comp.name}
-              initial={{ opacity: 0, y: 30 }}
+              key={comp.id}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 items-center`}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="group relative rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-lg hover:shadow-blue-500/10 transition-all"
             >
-              <div className="flex-1 w-full">
-                <div className="glass rounded-2xl overflow-hidden aspect-[4/3] border-glow">
-                  <Canvas camera={{ position: [0, 0, 4], fov: 45 }}>
-                    <Suspense fallback={null}>
-                      <ambientLight intensity={0.4} />
-                      <pointLight position={[5, 5, 5]} intensity={1} color="#22d3ee" />
-                      <pointLight position={[-5, -3, 3]} intensity={0.4} color="#a78bfa" />
-                      <comp.scene />
-                      <Environment preset="night" />
-                    </Suspense>
-                  </Canvas>
-                </div>
+
+              {/* Preview */}
+              <div className="h-56 flex items-center justify-center bg-gradient-to-br from-slate-800/60 to-slate-900 border-b border-slate-800 p-6">
+                {comp.render()}
               </div>
 
-              <div className="flex-1 space-y-4">
-                <h3 className="text-2xl font-bold text-foreground">{comp.name}</h3>
-                <p className="text-muted-foreground leading-relaxed">{comp.description}</p>
-                <div className="glass rounded-xl p-4 border-glow">
-                  <pre className="text-sm font-mono text-primary overflow-x-auto">
+              {/* Info */}
+              <div className="p-6 space-y-4">
+
+                <h3 className="text-lg font-semibold text-white">
+                  {comp.name}
+                </h3>
+
+                <p className="text-slate-400 text-sm min-h-[42px]">
+                  {comp.description}
+                </p>
+
+                {/* Code */}
+                <div className="rounded-lg bg-black/60 border border-slate-800 p-3 overflow-x-auto">
+
+                  <pre className="text-xs font-mono text-blue-400 leading-relaxed">
                     <code>{comp.code}</code>
                   </pre>
+
                 </div>
+
               </div>
+
             </motion.div>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );
