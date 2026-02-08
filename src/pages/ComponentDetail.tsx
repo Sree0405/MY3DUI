@@ -5,6 +5,7 @@ import { getComponentBySlug, categoryLabels, categoryColors } from "@/data/compo
 import { usePageMeta } from "@/hooks/use-page-meta";
 import PropsTable from "@/components/docs/PropsTable";
 import CodeBlock from "@/components/shared/CodeBlock";
+import LivePreview from "@/components/docs/LivePreview";
 
 export default function ComponentDetail() {
   const { name } = useParams<{ name: string }>();
@@ -63,17 +64,19 @@ export default function ComponentDetail() {
 
           {/* Live Demo Placeholder */}
           {comp.hasLiveDemo && (
-            <section className="mb-12">
-              <h2 className="text-xl font-bold text-foreground mb-4">Live Demo</h2>
-              <div className="glass rounded-2xl aspect-video flex items-center justify-center border-glow">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                    <Zap className="w-8 h-8 text-primary" />
-                  </div>
-                  <p className="text-muted-foreground text-sm">Interactive demo available in the <Link to={`/playground/${comp.slug}`} className="text-primary hover:underline">Playground</Link></p>
-                </div>
-              </div>
-            </section>
+            // <section className="mb-12">
+            //   <h2 className="text-xl font-bold text-foreground mb-4">Live Demo</h2>
+            //   <div className="glass rounded-2xl aspect-video flex items-center justify-center border-glow">
+            //     <div className="text-center">
+            //       <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+            //         <Zap className="w-8 h-8 text-primary" />
+            //       </div>
+            //       <p className="text-muted-foreground text-sm">Interactive demo available in the <Link to={`/playground/${comp.slug}`} className="text-primary hover:underline">Playground</Link></p>
+            //     </div>
+            //   </div>
+            // </section>
+            <LivePreview slug={comp.slug} />
+
           )}
 
           {/* Props Table */}
