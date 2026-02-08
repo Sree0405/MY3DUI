@@ -45,7 +45,7 @@ export { Badge } from "@/components/ui/badge";
 export { Input } from "@/components/ui/input";
 export { Select } from "@/components/ui/select";
 import { Tabs3D } from "@/components/ui/tabs3d";
-// export { Accordion } from "@/components/ui/accordion";
+import { Accordion3D } from "@/components/ui/accordion3d";
 export { Table } from "@/components/ui/table";
 export { Pagination } from "@/components/ui/pagination";
 export { Progress } from "@/components/ui/progress";
