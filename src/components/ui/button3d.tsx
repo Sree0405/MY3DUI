@@ -164,14 +164,25 @@ const Button3D = React.forwardRef<HTMLButtonElement, Button3DProps>(
             );
         }
 
+        // Filter out props that conflict with motion props
+        const {
+            onDrag,
+            onDragStart,
+            onDragEnd,
+            onAnimationStart,
+            onAnimationEnd,
+            onAnimationIteration,
+            ...safeProps
+        } = props;
+
         return (
             <motion.button
                 ref={ref}
                 className={buttonClassName}
                 style={buttonStyle}
                 disabled={props.disabled || loading}
+                {...safeProps}
                 {...motionProps}
-                {...props}
             >
                 {buttonContent}
             </motion.button>
