@@ -38,7 +38,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.a
-              href="#components"
+              href="/components"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="bg-primary text-primary-foreground px-8 py-3.5 rounded-xl font-semibold text-base flex items-center gap-2 glow-primary"
@@ -47,7 +47,7 @@ export default function HeroSection() {
               <ArrowRight className="w-4 h-4" />
             </motion.a>
             <motion.a
-              href="#docs"
+              href="/docs"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="glass px-8 py-3.5 rounded-xl font-semibold text-base text-foreground flex items-center gap-2 border-glow"
