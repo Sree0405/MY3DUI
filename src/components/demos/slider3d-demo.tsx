@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Slider3D } from "@/components/ui/slider3d";
-import { Stack } from "@/components/layouts/stack";
+import { Slider3D, Stack } from "@sreedev/my3dui";
 import { Volume2, Sun, Thermometer } from "lucide-react";
 
 export default function Slider3DDemo() {

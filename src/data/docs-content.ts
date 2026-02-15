@@ -27,17 +27,17 @@ export const gettingStartedPage: DocPage = {
     {
       id: "installation",
       title: "Installation",
-      content: `Install My3DUI and its peer dependencies:\n\n\`\`\`bash\nnpm install @my3dui/core @react-three/fiber @react-three/drei three\n\`\`\`\n\nOr with yarn:\n\n\`\`\`bash\nyarn add @my3dui/core @react-three/fiber @react-three/drei three\n\`\`\``,
+      content: `Install My3DUI and its peer dependencies:\n\n\`\`\`bash\nnpm install @sreedev/my3dui @react-three/fiber @react-three/drei three\n\`\`\`\n\nOr with yarn:\n\n\`\`\`bash\nyarn add @sreedev/my3dui @react-three/fiber @react-three/drei three\n\`\`\``,
     },
     {
       id: "first-component",
       title: "Your First Component",
-      content: `Import and use a 3D component:\n\n\`\`\`tsx\nimport { Canvas } from '@react-three/fiber'\nimport { Button3D } from '@my3dui/core'\n\nfunction App() {\n  return (\n    <Canvas>\n      <ambientLight />\n      <Button3D onClick={() => alert('Clicked!')}>\n        Hello 3D\n      </Button3D>\n    </Canvas>\n  )\n}\n\`\`\``,
+      content: `Import and use a 3D component:\n\n\`\`\`tsx\nimport { Canvas } from '@react-three/fiber'\nimport { Button3D } from '@sreedev/my3dui'\n\nfunction App() {\n  return (\n    <Canvas>\n      <ambientLight />\n      <Button3D onClick={() => alert('Clicked!')}>\n        Hello 3D\n      </Button3D>\n    </Canvas>\n  )\n}\n\`\`\``,
     },
     {
       id: "with-nextjs",
       title: "Using with Next.js",
-      content: `My3DUI works with Next.js App Router. Use the \`'use client'\` directive:\n\n\`\`\`tsx\n'use client'\nimport { Canvas } from '@react-three/fiber'\nimport { Card3D } from '@my3dui/core'\n\nexport default function Page() {\n  return (\n    <Canvas>\n      <Card3D depth={0.2} tilt>\n        <h2>3D Card</h2>\n      </Card3D>\n    </Canvas>\n  )\n}\n\`\`\``,
+      content: `My3DUI works with Next.js App Router. Use the \`'use client'\` directive:\n\n\`\`\`tsx\n'use client'\nimport { Canvas } from '@react-three/fiber'\nimport { Card3D } from '@sreedev/my3dui'\n\nexport default function Page() {\n  return (\n    <Canvas>\n      <Card3D depth={0.2} tilt>\n        <h2>3D Card</h2>\n      </Card3D>\n    </Canvas>\n  )\n}\n\`\`\``,
     },
     {
       id: "theming",
@@ -60,22 +60,22 @@ export const installationPage: DocPage = {
     {
       id: "vite",
       title: "Vite Setup",
-      content: `\`\`\`bash\nnpm create vite@latest my-app -- --template react-ts\ncd my-app\nnpm install @my3dui/core @react-three/fiber @react-three/drei three\n\`\`\`\n\nNo additional configuration required. Vite handles Three.js imports natively.`,
+      content: `\`\`\`bash\nnpm create vite@latest my-app -- --template react-ts\ncd my-app\nnpm install @sreedev/my3dui @react-three/fiber @react-three/drei three\n\`\`\`\n\nNo additional configuration required. Vite handles Three.js imports natively.`,
     },
     {
       id: "nextjs",
       title: "Next.js Setup",
-      content: `\`\`\`bash\nnpx create-next-app@latest my-app --typescript\ncd my-app\nnpm install @my3dui/core @my3dui/next @react-three/fiber @react-three/drei three\n\`\`\`\n\nAdd the Next.js adapter to your \`next.config.js\`:\n\n\`\`\`js\nconst { withMy3DUI } = require('@my3dui/next')\nmodule.exports = withMy3DUI({\n  // your Next.js config\n})\n\`\`\``,
+      content: `\`\`\`bash\nnpx create-next-app@latest my-app --typescript\ncd my-app\nnpm install @sreedev/my3dui @my3dui/next @react-three/fiber @react-three/drei three\n\`\`\`\n\nAdd the Next.js adapter to your \`next.config.js\`:\n\n\`\`\`js\nconst { withMy3DUI } = require('@my3dui/next')\nmodule.exports = withMy3DUI({\n  // your Next.js config\n})\n\`\`\``,
     },
     {
       id: "remix",
       title: "Remix Setup",
-      content: `\`\`\`bash\nnpx create-remix@latest my-app\ncd my-app\nnpm install @my3dui/core @react-three/fiber @react-three/drei three\n\`\`\`\n\nMark 3D components as client-only using Remix's \`ClientOnly\` wrapper.`,
+      content: `\`\`\`bash\nnpx create-remix@latest my-app\ncd my-app\nnpm install @sreedev/my3dui @react-three/fiber @react-three/drei three\n\`\`\`\n\nMark 3D components as client-only using Remix's \`ClientOnly\` wrapper.`,
     },
     {
       id: "typescript",
       title: "TypeScript Configuration",
-      content: `My3DUI ships with full TypeScript declarations. Add path aliases to your \`tsconfig.json\`:\n\n\`\`\`json\n{\n  "compilerOptions": {\n    "types": ["@my3dui/core/types"]\n  }\n}\n\`\`\``,
+      content: `My3DUI ships with full TypeScript declarations. Add path aliases to your \`tsconfig.json\`:\n\n\`\`\`json\n{\n  "compilerOptions": {\n    "types": ["@sreedev/my3dui/types"]\n  }\n}\n\`\`\``,
     },
   ],
 };
@@ -162,7 +162,7 @@ export const guideContent: Record<string, DocPage> = {
       {
         id: "lazy",
         title: "Lazy Loading",
-        content: `Lazy-load heavy components:\n\n\`\`\`tsx\nconst Particles = lazy(() => import('@my3dui/core/Particles'))\n\n<Suspense fallback={<Spinner3D />}>\n  <Particles count={5000} />\n</Suspense>\n\`\`\``,
+        content: `Lazy-load heavy components:\n\n\`\`\`tsx\nconst Particles = lazy(() => import('@sreedev/my3dui/Particles'))\n\n<Suspense fallback={<Spinner3D />}>\n  <Particles count={5000} />\n</Suspense>\n\`\`\``,
       },
       {
         id: "profiling",
@@ -211,7 +211,7 @@ export const guideContent: Record<string, DocPage> = {
       {
         id: "nextjs",
         title: "Next.js App Router",
-        content: `Use the \`'use client'\` directive for 3D components:\n\n\`\`\`tsx\n'use client'\nimport { Button3D } from '@my3dui/core'\n\nexport default function MyComponent() {\n  return <Button3D>Click</Button3D>\n}\n\`\`\``,
+        content: `Use the \`'use client'\` directive for 3D components:\n\n\`\`\`tsx\n'use client'\nimport { Button3D } from '@sreedev/my3dui'\n\nexport default function MyComponent() {\n  return <Button3D>Click</Button3D>\n}\n\`\`\``,
       },
       {
         id: "fallback",

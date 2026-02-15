@@ -1,7 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Fog } from "@/components/ui/fog";
-import { Grid3D } from "@/components/layouts/grid3d";
+import { Fog, Grid3D } from "@sreedev/my3dui";
 
 export default function FogDemo() {
     return (

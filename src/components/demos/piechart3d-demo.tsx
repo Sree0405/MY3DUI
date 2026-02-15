@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { PieChart3D } from "@/components/ui/piechart3d";
+import { PieChart3D } from "@sreedev/my3dui";
 
 export default function PieChart3DDemo() {
     const data = [

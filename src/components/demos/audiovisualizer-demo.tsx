@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { AudioVisualizer } from "@/components/ui/audiovisualizer";
+import { AudioVisualizer } from "@sreedev/my3dui";
 import { Text } from "@react-three/drei";
 
 export default function AudioVisualizerDemo() {

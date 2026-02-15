@@ -8,7 +8,7 @@ import {
 import * as React from "react";
 import { Suspense } from "react";
 
-import * as My3DUI from "@/lib/my3dui";
+import * as My3DUI from "@sreedev/my3dui";
 import * as Drei from "@react-three/drei";
 import * as Fiber from "@react-three/fiber";
 

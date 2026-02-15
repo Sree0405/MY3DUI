@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Grid3D } from "@/components/layouts/grid3d";
+import { Grid3D } from "@sreedev/my3dui";
 
 export default function Grid3DDemo() {
     return (

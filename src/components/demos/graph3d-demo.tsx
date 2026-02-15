@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Graph3D } from "@/components/ui/graph3d";
+import { Graph3D } from "@sreedev/my3dui";
 
 export default function Graph3DDemo() {
     const nodes = [

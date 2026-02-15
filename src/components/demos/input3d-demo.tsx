@@ -1,7 +1,5 @@
-import { Input3D } from "@/components/ui/input3d";
-import { Stack } from "@/components/layouts/stack";
+import { Input3D, Stack, Button3D } from "@sreedev/my3dui";
 import { Mail, Lock, Search, User, Phone } from "lucide-react";
-import { Button3D } from "@/components/ui/button3d";
 
 export default function Input3DDemo() {
     return (

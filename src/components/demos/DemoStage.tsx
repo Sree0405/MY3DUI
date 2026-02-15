@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Stage, OrbitControls, Environment } from "@react-three/drei";
+import { Stage } from "@sreedev/my3dui";
+import { OrbitControls } from "@react-three/drei";
 
 interface DemoStageProps {
     children: React.ReactNode;

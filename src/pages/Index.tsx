@@ -3,7 +3,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ComponentShowcase from "@/components/ComponentShowcase";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
-// import  Accordion3D  from "@/components/ui/accordion3d";
+// import  Accordion3D  from "@component/uiaccordion3d";
 const Index = () => {
   return (
     <>

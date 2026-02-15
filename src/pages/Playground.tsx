@@ -11,9 +11,10 @@ import {
   ResizablePanelGroup,
   ResizablePanel,
   ResizableHandle,
-} from "@/components/ui/resizable";
+} from "@sreedev/my3dui";
 
 import LivePreview from "@/components/docs/LivePreview";
+import ErrorBoundary from "@/components/docs/ErrorBoundary";
 import { demoRegistry } from "@/data/demo-registry";
 
 import {
@@ -126,11 +127,13 @@ export default function Playground() {
                 <div className="h-full flex flex-col">
 
                   <div className="flex-1 p-4 bg-black/50 overflow-hidden relative">
-                    {demoRegistry[selectedSlug] ? (
-                      <LivePreview slug={selectedSlug} />
-                    ) : (
-                      <LivePreviewPane />
-                    )}
+                    <ErrorBoundary>
+                      {demoRegistry[selectedSlug] ? (
+                        <LivePreview slug={selectedSlug} />
+                      ) : (
+                        <LivePreviewPane />
+                      )}
+                    </ErrorBoundary>
                   </div>
 
                   {/* Props */}

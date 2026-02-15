@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import DemoStage from "./DemoStage";
-import { Modal3D } from "@/components/ui/modal3d";
-import { Button3D } from "@/components/ui/button3d";
+import { Modal3D, Button3D } from "@sreedev/my3dui";
 
 export default function Modal3DDemo() {
     const [open, setOpen] = useState(false);

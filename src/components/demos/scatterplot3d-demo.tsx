@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { ScatterPlot3D } from "@/components/ui/scatterplot3d";
+import { ScatterPlot3D } from "@sreedev/my3dui";
 
 export default function ScatterPlot3DDemo() {
     const data = Array.from({ length: 50 }, () => ({

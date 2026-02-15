@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 
-import { Stage } from "@/components/layouts/stage";
+import { Stage } from "@sreedev/my3dui";
 
 export default function StageDemo() {
   return (

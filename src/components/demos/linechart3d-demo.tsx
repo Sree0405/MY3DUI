@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { LineChart3D } from "@/components/ui/linechart3d";
+import { LineChart3D } from "@sreedev/my3dui";
 import { Vector3 } from "three";
 
 export default function LineChart3DDemo() {

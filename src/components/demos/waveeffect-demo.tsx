@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { WaveEffect } from "@/components/ui/waveeffect";
+import { WaveEffect } from "@sreedev/my3dui";
 
 export default function WaveEffectDemo() {
     return (

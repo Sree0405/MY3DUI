@@ -64,17 +64,6 @@ export default function ComponentDetail() {
 
           {/* Live Demo Placeholder */}
           {comp.hasLiveDemo && (
-            // <section className="mb-12">
-            //   <h2 className="text-xl font-bold text-foreground mb-4">Live Demo</h2>
-            //   <div className="glass rounded-2xl aspect-video flex items-center justify-center border-glow">
-            //     <div className="text-center">
-            //       <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            //         <Zap className="w-8 h-8 text-primary" />
-            //       </div>
-            //       <p className="text-muted-foreground text-sm">Interactive demo available in the <Link to={`/playground/${comp.slug}`} className="text-primary hover:underline">Playground</Link></p>
-            //     </div>
-            //   </div>
-            // </section>
             <LivePreview slug={comp.slug} />
 
           )}

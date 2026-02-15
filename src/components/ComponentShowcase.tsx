@@ -1,22 +1,26 @@
 import { motion } from "framer-motion";
+import {
+  Badge3D,
+  Toggle3D,
+  Button3D,
+  Card3D,
+  Accordion3D,
+  Input3D,
+  Slider3D,
+  Progress3D,
+  Tabs3D,
+} from "@sreedev/my3dui";
 
-import { Toggle3D } from "@/components/ui/toggle3d";
-import { Button3D } from "@/components/ui/button3d";
-import { Card3D } from "@/components/ui/card3d";
-import { Accordion3D } from "@/components/ui/accordion3d";
-import { Badge3D } from "@/components/ui/badge3d";
-import { Input3D } from "@/components/ui/input3d";
-import { Slider3D } from "@/components/ui/slider3d";
-import { Progress3D } from "@/components/ui/progress3d";
-import { Tabs3D } from "@/components/ui/tabs3d";
+/* ----------------------------------
+   Component Data
+---------------------------------- */
 
-/* Component Data */
 const components = [
   {
     id: "button",
     name: "Button3D",
     description: "Interactive buttons with press depth and glow feedback.",
-    code: `<Button3D variant="primary">Click</Button3D>`,
+    code: `<Button3D>Primary</Button3D>`,
     render: () => (
       <div className="flex gap-4">
         <Button3D>Primary</Button3D>
@@ -33,7 +37,7 @@ const components = [
     render: () => (
       <div className="flex gap-6">
         <Toggle3D defaultChecked />
-        <Toggle3D variant="glass" />
+        <Toggle3D  />
       </div>
     ),
   },
@@ -97,7 +101,7 @@ const components = [
     id: "slider",
     name: "Slider3D",
     description: "Draggable slider with animated thumb.",
-    code: `<Slider3D value={40} />`,
+    code: `<Slider3D defaultValue={40} />`,
     render: () => (
       <div className="w-52">
         <Slider3D defaultValue={40} />
@@ -121,67 +125,62 @@ const components = [
     id: "tabs",
     name: "Tabs3D",
     description: "Animated tab navigation with depth effects.",
-    code: `<Tabs3D items={[...]} />`,
+    code: `<Tabs3D tabs={[...]} />`,
     render: () => (
-<Tabs3D
-  tabs={[
-    {
-      label: "Dashboard",
-      value: "dashboard",
-      content: (
-        <div className="space-y-2">
-          <h4 className="font-semibold">Overview</h4>
-          <p className="text-sm text-muted-foreground">
-            Track usage, performance, and activity.
-          </p>
-        </div>
-      ),
-    },
+      <Tabs3D
+        tabs={[
+          {
+            label: "Dashboard",
+            value: "dashboard",
+            content: (
+              <TabContent
+                title="Overview"
+                text="Track usage, performance, and activity."
+              />
+            ),
+          },
 
-    {
-      label: "Profile",
-      value: "profile",
-      content: (
-        <div className="space-y-2">
-          <h4 className="font-semibold">User Settings</h4>
-          <p className="text-sm text-muted-foreground">
-            Manage your personal information and preferences.
-          </p>
-        </div>
-      ),
-    },
+          {
+            label: "Profile",
+            value: "profile",
+            content: (
+              <TabContent
+                title="User Settings"
+                text="Manage your personal information."
+              />
+            ),
+          },
 
-    {
-      label: "Billing",
-      value: "billing",
-      content: (
-        <div className="space-y-2">
-          <h4 className="font-semibold">Subscription</h4>
-          <p className="text-sm text-muted-foreground">
-            View invoices and manage your plan.
-          </p>
-        </div>
-      ),
-    },
+          {
+            label: "Billing",
+            value: "billing",
+            content: (
+              <TabContent
+                title="Subscription"
+                text="View invoices and manage your plan."
+              />
+            ),
+          },
 
-    {
-      label: "Support",
-      value: "support",
-      content: (
-        <div className="space-y-2">
-          <h4 className="font-semibold">Help Center</h4>
-          <p className="text-sm text-muted-foreground">
-            Contact support or browse FAQs.
-          </p>
-        </div>
-      ),
-    },
-  ]}
-/>
-
+          {
+            label: "Support",
+            value: "support",
+            content: (
+              <TabContent
+                title="Help Center"
+                text="Contact support or browse FAQs."
+              />
+            ),
+          },
+        ]}
+      />
     ),
   },
 ];
+
+/* ----------------------------------
+   Showcase Page
+---------------------------------- */
 
 export default function ComponentShowcase() {
   return (
@@ -220,7 +219,7 @@ export default function ComponentShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-lg hover:shadow-blue-500/10 transition-all"
+              className="group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-lg hover:shadow-blue-500/10 transition-all"
             >
 
               {/* Preview */}
@@ -258,5 +257,29 @@ export default function ComponentShowcase() {
 
       </div>
     </section>
+  );
+}
+
+/* ----------------------------------
+   Small Helpers
+---------------------------------- */
+
+function TabContent({
+  title,
+  text,
+}: {
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="space-y-2">
+      <h4 className="font-semibold text-white">
+        {title}
+      </h4>
+
+      <p className="text-sm text-slate-400">
+        {text}
+      </p>
+    </div>
   );
 }

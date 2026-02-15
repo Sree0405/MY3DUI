@@ -1,9 +1,4 @@
-import { Container } from "@/components/layouts/container";
-import { Stack } from "@/components/layouts/stack";
-import { Grid } from "@/components/layouts/grid";
-import { Section } from "@/components/layouts/section";
-import { Button3D } from "@/components/ui/button3d";
-import { Card3D } from "@/components/ui/card3d";
+import { Container, Stack, Grid, Section, Button3D, Card3D } from "@sreedev/my3dui";
 
 export default function LayoutDemo() {
     return (

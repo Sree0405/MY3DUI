@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { BarChart3D } from "@/components/ui/barchart3d";
+import { BarChart3D } from "@sreedev/my3dui";
 
 export default function BarChart3DDemo() {
     const data = Array.from({ length: 10 }, (_, i) => ({

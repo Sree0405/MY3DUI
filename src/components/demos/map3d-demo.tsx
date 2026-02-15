@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Map3D } from "@/components/ui/map3d";
+import { Map3D } from "@sreedev/my3dui";
 
 export default function Map3DDemo() {
     const markers = [

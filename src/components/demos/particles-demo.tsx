@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Particles } from "@/components/ui/particles";
+import { Particles } from "@sreedev/my3dui";
 
 export default function ParticlesDemo() {
     return (

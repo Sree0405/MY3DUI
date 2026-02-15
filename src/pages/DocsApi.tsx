@@ -35,7 +35,7 @@ export default function DocsApi() {
         <h2 className="text-xl font-bold text-foreground mb-4">Import</h2>
         <div className="glass rounded-xl p-4 border-glow">
           <code className="text-sm font-mono text-primary">
-            {`import { ${comp.name} } from '@my3dui/core'`}
+            {`import { ${comp.name} } from '@sreedev/my3dui'`}
           </code>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Gallery3D } from "@/components/ui/gallery3d";
+import { Gallery3D } from "@sreedev/my3dui";
 
 export default function Gallery3DDemo() {
     // Using placeholder images

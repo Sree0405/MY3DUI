@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { ImagePlane } from "@/components/ui/imageplane";
+import { ImagePlane } from "@sreedev/my3dui";
 
 export default function ImagePlaneDemo() {
     return (

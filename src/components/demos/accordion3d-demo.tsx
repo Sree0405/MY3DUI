@@ -1,4 +1,4 @@
-import { Accordion3D } from "@/components/ui/accordion3d";
+import { Accordion3D } from "@sreedev/my3dui";
 import { Sparkles, Zap, Shield, Box, LayoutTemplate, Palette, Cpu } from "lucide-react";
 
 export default function Accordion3DDemo() {

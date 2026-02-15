@@ -1,8 +1,7 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
-import { Bloom } from "@/components/ui/bloom";
-import { Button3D } from "@/components/ui/button3d";
+import { Bloom, Button3D } from "@sreedev/my3dui";
 
 // Bloom needs specific setup, using custom Stage here essentially or DemoStage might interfere with effects if not careful?
 // DemoStage puts children in Stage. EffectComposer usually needs to be outside or at top level.

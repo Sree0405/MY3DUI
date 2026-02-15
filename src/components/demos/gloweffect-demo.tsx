@@ -1,7 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { GlowEffect } from "@/components/ui/gloweffect";
-import { Button3D } from "@/components/ui/button3d";
+import { GlowEffect, Button3D } from "@sreedev/my3dui";
 
 export default function GlowEffectDemo() {
     return (

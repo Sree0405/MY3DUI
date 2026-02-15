@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { NavBar3D } from "@/components/ui/navbar3d";
+import { NavBar3D } from "@sreedev/my3dui";
 
 export default function NavBar3DDemo() {
     return (

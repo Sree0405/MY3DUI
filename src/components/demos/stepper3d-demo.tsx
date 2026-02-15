@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Stepper3D } from "@/components/ui/stepper3d";
+import { Stepper3D } from "@sreedev/my3dui";
 
 export default function Stepper3DDemo() {
     return (

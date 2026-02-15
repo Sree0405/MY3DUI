@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { NoiseField } from "@/components/ui/noisefield";
+import { NoiseField } from "@sreedev/my3dui";
 
 export default function NoiseFieldDemo() {
     return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DemoStage from "./DemoStage";
-import { Select3D } from "@/components/ui/select3d";
+import { Select3D } from "@sreedev/my3dui";
 import { Text } from "@react-three/drei";
 
 export default function Select3DDemo() {

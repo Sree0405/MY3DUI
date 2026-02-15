@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { ModelViewer } from "@/components/ui/modelviewer";
+import { ModelViewer } from "@sreedev/my3dui";
 
 export default function ModelViewerDemo() {
     return (

@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Progress3D } from "@/components/ui/progress3d";
-import { Stack } from "@/components/layouts/stack";
-import { Button3D } from "@/components/ui/button3d";
+import { Progress3D, Stack, Button3D } from "@sreedev/my3dui";
 
 export default function Progress3DDemo() {
     const [progress, setProgress] = useState(0);

@@ -1,6 +1,4 @@
-import { Card3D } from "@/components/ui/card3d";
-import { Button3D } from "@/components/ui/button3d";
-import { Badge3D } from "@/components/ui/badge3d";
+import { Card3D, Button3D, Badge3D } from "@sreedev/my3dui";
 import { CreditCard, Wallet, Activity, ShieldCheck, Zap } from "lucide-react";
 
 // Placeholder for Badge3D until it's fully implemented

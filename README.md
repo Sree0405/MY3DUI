@@ -24,8 +24,8 @@ Inspired by modern UI frameworks like Material UI and Chakra, My3DUI brings the 
 ## 📦 Installation
 
 ```bash
-npm install @my3dui/core
+npm install @sreedev/my3dui
 # or
-yarn add @my3dui/core
+yarn add @sreedev/my3dui
 # or
-pnpm add @my3dui/core
+pnpm add @sreedev/my3dui

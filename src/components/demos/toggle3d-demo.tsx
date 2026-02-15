@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DemoStage from "./DemoStage";
-import { Toggle3D } from "@/components/ui/toggle3d";
+import { Toggle3D } from "@sreedev/my3dui";
 import { Text } from "@react-three/drei";
 
 export default function Toggle3DDemo() {

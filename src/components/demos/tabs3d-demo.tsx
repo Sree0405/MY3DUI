@@ -1,6 +1,5 @@
-import { Tabs3D } from "@/components/ui/tabs3d";
 import { Home, Settings, User, Bell } from "lucide-react";
-import { Card3D } from "@/components/ui/card3d";
+import { Card3D ,Tabs3D} from "@sreedev/my3dui";
 
 export default function Tabs3DDemo() {
     const basicTabs = [

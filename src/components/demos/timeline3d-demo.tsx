@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Timeline3D } from "@/components/ui/timeline3d";
+import { Timeline3D } from "@sreedev/my3dui";
 
 export default function Timeline3DDemo() {
     const events = [

@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { Spinner3D } from "@/components/ui/spinner3d";
+import { Spinner3D } from "@sreedev/my3dui";
 
 export default function Spinner3DDemo() {
     return (

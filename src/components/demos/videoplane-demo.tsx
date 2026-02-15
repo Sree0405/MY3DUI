@@ -1,6 +1,6 @@
 import React from "react";
 import DemoStage from "./DemoStage";
-import { VideoPlane } from "@/components/ui/videoplane";
+import { VideoPlane } from "@sreedev/my3dui";
 
 export default function VideoPlaneDemo() {
     return (
@@ -10,7 +10,6 @@ export default function VideoPlaneDemo() {
                 src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 width={5}
                 muted={true}
-                autoplay={true}
                 loop={true}
             />
         </DemoStage>
