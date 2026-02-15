@@ -4,7 +4,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 
 /* Personal Stats */
 const stats = [
-  { icon: Code, label: "Projects Built", value: "25+" },
+  { icon: Code, label: "Projects Built", value: "10+" },
   { icon: Package, label: "UI Components", value: "50+" },
   { icon: Layers, label: "Systems Designed", value: "10+" },
   { icon: Globe, label: "Open Source Reach", value: "Global" },
