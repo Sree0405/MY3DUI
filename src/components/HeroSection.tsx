@@ -53,7 +53,7 @@ export default function HeroSection() {
               className="glass px-8 py-3.5 rounded-xl font-semibold text-base text-foreground flex items-center gap-2 border-glow"
             >
               <Download className="w-4 h-4" />
-              npm install my3dui
+              npm install @sreedev/my3dui
             </motion.a>
           </div>
 

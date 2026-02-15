@@ -3,7 +3,7 @@ import { Box } from "lucide-react";
 const links = {
   Product: ["Components", "Themes", "Playground", "Changelog"],
   Resources: ["Documentation", "API Reference", "Examples", "Blog"],
-  Community: ["GitHub", "Discord", "Twitter", "Contributing"],
+  Community: ["GitHub", "Linkedin", "Instagram", "Contributing"],
   Company: ["About", "Contact", "Privacy"],
 };
 

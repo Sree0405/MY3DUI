@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MessageSquare, Github } from "lucide-react";
+import { Mail, MessageSquare, Github, Linkedin } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { useState } from "react";
 
@@ -18,12 +18,12 @@ export default function Contact() {
         </div>
       </section>
       <section className="py-12">
-        <div className="container mx-auto px-6 max-w-2xl">
+        <div className="container mx-auto px-6 max-w-3xl">
           <div className="grid sm:grid-cols-3 gap-4 mb-12">
             {[
-              { icon: Mail, label: "Email", value: "hello@my3dui.dev" },
-              { icon: MessageSquare, label: "Discord", value: "discord.gg/my3dui" },
-              { icon: Github, label: "GitHub", value: "github.com/my3dui" },
+              { icon: Mail, label: "Email", value: "sreekanth04052005@gmail.com" },
+              { icon: Github, label: "GitHub", value: "github.com/sree0405" },
+              {icon:Linkedin, label:"LinkedIn", value:"linkedin.com/in/sreekanth0405" }
             ].map((c) => (
               <div key={c.label} className="glass rounded-xl p-5 text-center">
                 <c.icon className="w-5 h-5 text-primary mx-auto mb-2" />

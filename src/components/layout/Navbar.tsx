@@ -85,7 +85,7 @@ export default function Navbar() {
             <kbd className="hidden xl:inline text-[10px] font-mono glass px-1.5 py-0.5 rounded">⌘K</kbd>
           </button>
           <a
-            href="https://github.com/my3dui"
+            href="https://github.com/sree0405/my3dui"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors p-2"

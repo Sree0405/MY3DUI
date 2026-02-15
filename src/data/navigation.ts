@@ -25,9 +25,9 @@ export const resourcesNav: NavItem[] = [
 ];
 
 export const communityNav: NavItem[] = [
-  { label: "GitHub", href: "https://github.com/my3dui", external: true },
-  { label: "Discord", href: "https://discord.gg/my3dui", external: true },
-  { label: "Twitter", href: "https://twitter.com/my3dui", external: true },
+  { label: "GitHub", href: "https://github.com/sree0405", external: true },
+  { label: "Instagram", href: "https://www.instagram.com/srxx.im", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sreekanth04052005/", external: true },
   { label: "Contributing", href: "/contributing" },
 ];
 
