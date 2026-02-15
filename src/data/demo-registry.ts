@@ -38,7 +38,6 @@ export const demoRegistry: Record<string, React.LazyExoticComponent<React.Compon
   // Effects
   particles: lazy(() => import("@/components/demos/particles-demo")),
   bloom: lazy(() => import("@/components/demos/bloom-demo")),
-  reflection: lazy(() => import("@/components/demos/reflection-demo")),
   fog: lazy(() => import("@/components/demos/fog-demo")),
   shadowsystem: lazy(() => import("@/components/demos/shadowsystem-demo")),
   gloweffect: lazy(() => import("@/components/demos/gloweffect-demo")),
